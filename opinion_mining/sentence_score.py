@@ -59,7 +59,6 @@ class ScoreBasedOnSentiWordNet:
         :param sentence: string. raw sentence string.
         :return: int. score of sentence
         """
-        print sentence
         parsed_sent = ps.parse_sent_for_sentiwordnet(sentence)
         raw_score = 0
         abs_score = 0
