@@ -58,7 +58,7 @@ class TextExtract:
 
         sentence_array = reviews.text
         # prepare for tokenize, join array to string
-        sentences = u''.join(sentence_array).decode('utf-8').replace('\n', '')
+        sentences = u''.join(sentence_array).decode('utf-8').replace('\n', '').lower()
         sent_list = sent_detector.tokenize(sentences)
         # remove sentence whose length is shorter than threshold
         sent_list_filtered = [sent for sent in sent_list if len(sent) > cls.SENT_LENGTH_THRESHOLD]
@@ -276,6 +276,12 @@ class ParseSentence:
         """
         # snowball = SnowballStemmer('english')
         return WordNetLemmatizer().lemmatize(word)
+
+    @classmethod
+    def check_stopwords(cls, word):
+        if not len(cls.STOPWORDS):
+            cls.STOPWORDS = set(stopwords.words('english'))
+        return word in cls.STOPWORDS
 
     @classmethod
     def parse_sentence(cls, sent):

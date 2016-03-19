@@ -130,6 +130,7 @@ class SentimentClassifyChange(SentimentClassify):
                     next_r_score=fset['next_score'][0], next_p_score=fset['next_score'][1],
                     review_r_score=fset['review_score'][0], review_p_score=fset['review_score'][1])
 
+
 def main():
 
     print
