@@ -1,6 +1,7 @@
 import nltk
 from collections import Counter
-from opinion_mining.text_extract import TextExtract, ParseSentence
+from opinion_mining.text_extract import TextExtract
+from opinion_mining.sentence_parse import ParseSentence
 
 
 class DynamicAspectsExtract:

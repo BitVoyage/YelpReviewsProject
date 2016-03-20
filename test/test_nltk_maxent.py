@@ -69,5 +69,21 @@ def test_simple():
         print pdist.prob('1'), pdist.prob('-1')
 
 
-test_maxent()
+def test_bag_words():
+    train_s = [
+        (dict(a=1, b=3, c=3, d=2, e=3), '-1'),
+        (dict(a=3, f=3, g=3, r=3), '1'),
+        (dict(a=1, b=3, c=3, d=2, e=3, h=3), '1'),
+        (dict(a=1, b=3, c=3, d=4), '-1')
+            ]
+    test_s = [
+        (dict(a=1, b=3, c=3, r=2, e=1)),
+        (dict(a=1, f=3, g=3, r=2, d=1))
+    ]
+    classifier = nltk.classify.MaxentClassifier.train(train_s, 'IIS', trace=0, max_iter=1000)
+    for featureset in test_s:
+        pdist = classifier.prob_classify(featureset)
+        print pdist.prob('1'), pdist.prob('-1')
+
+test_bag_words()
 

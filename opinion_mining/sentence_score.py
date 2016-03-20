@@ -1,6 +1,6 @@
 # coding=utf-8
 from nltk.corpus import sentiwordnet as swn
-from text_extract import ParseSentence as ps
+from sentence_parse import ParseSentence as ps
 
 
 class ScoreBasedOnSentiWordNet:

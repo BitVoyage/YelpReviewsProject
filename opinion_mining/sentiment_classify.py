@@ -9,7 +9,7 @@ class SentimentClassify:
 
     LABELED_NUM = 300
     MAXENT_ALGORITHM = 'IIS'
-    CLASSIFIER_FILE = '../data/classifier.pickle'
+    CLASSIFIER_FILE = '../saved_classifiers/maxent_sentiment_classifier.pickle'
     _label_sentiment = None
     _train_set = None
 

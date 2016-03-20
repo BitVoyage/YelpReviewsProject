@@ -1,6 +1,7 @@
 from opinion_mining.sentiment_classify import SentimentClassify as sc
 from opinion_mining.sentiment_classify import SentimentClassifyChange as scc
 from opinion_mining.text_extract import TextExtract as te
+import time
 
 
 def test_feature_extract():
@@ -36,5 +37,6 @@ if __name__ == "__main__":
     import sys
     reload(sys)
     sys.setdefaultencoding('utf-8')
-    # test_train()
+    test_train()
+    time.sleep(1)
     test_test()
